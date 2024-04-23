@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stocker</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/stockerstyle.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="https://images.websiteplanet.com/wp-content/uploads/2020/07/9-Best-S-Logos-and-How-to-Make-Your-Own-for-Free-image8.png" width="32" height="32" alt="Stocker logo">
+        Stocker
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link active" data-nav-link>Homepage</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link" data-nav-link>Markets</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link" data-nav-link>About us</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+
+          
+          
+
+        </ul>
+      </nav>
+
+      <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+
+      <a href="#" class="btn btn-outline">Wallet</a>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" aria-label="hero" data-section>
+        <div class="container">
+
+          <div class="hero-content">
+
+            <h1 class="h1 hero-title">Analyse your stocks with Stocker</h1>
+
+            <p class="hero-text">
+              Stocker help you predict stocks easily!!
+            </p>
+
+            <a href="#" class="btn btn-primary">Get started now</a>
+
+          </div>
+
+          <figure class="hero-banner">
+            <img src="./assets/images/hero-banner.png" width="570" height="448" alt="hero banner" class="w-100">
+          </figure>
+
+        </div>
+      </section>
+
+      <section class="section prediction-form" aria-label="prediction form" data-section>
+        <div class="container">
+      
+          <h2 class="h2 section-title">Predict Stocks</h2>
+          
+          <form class="prediction-form" action="#" method="POST">
+            <div class="form-group">
+              <div class="image-container">
+                <img src="https://www.investopedia.com/thmb/ASStR21rMu9-9_nj1x07H83zbUs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/close-up-of-stock-market-data-on-digital-display-1058454392-c48e2501742f4c21ad57c25d6a087bd0.jpg" alt="Image Description">
+              </div>
+              <label for="stock-name">Stock Name:</label>
+              <input type="text" id="stock-name" name="stock-name" placeholder="Enter stock name" required>
+            </div>
+            <div class="form-group">
+              <label for="period">Period of Time:</label>
+              <input type="text" id="period" name="period" placeholder="Enter period of time" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+          </form>
+      
+        </div>
+      </section>
+
+
+
+      <!-- 
+        - #TREND
+      -->
+
+      <section class="section trend" aria-label="crypto trend" data-section>
+        <div class="container">
+
+          <div class="trend-tab">
+
+            
+       
+
+            <ul class="tab-content">
+
+              <li>
+                <div class="trend-card">
+
+                  <div class="card-title-wrapper">
+                    <img src="data:image/jpeg;base64,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" width="24" height="45" alt="tsla logo">
+
+                    <a href="#" class="card-title">
+                      Tesla
+                    </a>
+                  </div>
+
+                  <data class="card-value" value=" 468.32B">USD 468.32B</data>
+
+                  <div class="card-analytics">
+                    
+
+                    <div class="badge red">−4.62%</div>
+                  </div>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="trend-card active">
+
+                  <div class="card-title-wrapper">
+                    <img src="https://cdn.vox-cdn.com/thumbor/FtAV-Waa1rTPheAkxv3o4i0MVf0=/0x0:1000x1000/1200x800/filters:focal(421x430:581x590)/cdn.vox-cdn.com/uploads/chorus_image/image/62800797/Mastercard_logo.0.jpg" width="24" height="24" alt="mc logo">
+
+                    <a href="#" class="card-title">
+                      MasterCard.Inc
+                    </a>
+                  </div>
+
+                  <data class="card-value" value="421.56B">USD 421.56B</data>
+
+                  <div class="card-analytics">
+                    
+
+                    <div class="badge green">+0.61%</div>
+                  </div>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="trend-card">
+
+                  <div class="card-title-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWhgJJG9oTxy-VPIWn3TPLf8usxWa_fFVMTCHAta8obA&s" width="24" height="24" alt="microsoft logo">
+
+                    <a href="#" class="card-title">
+                        Microsoft
+                    </a>
+                  </div>
+
+                  <data class="card-value" value="2.97T">USD 2.97T</data>
+
+                  <div class="card-analytics">
+                   
+
+                    <div class="badge green">0.61%</div>
+                  </div>
+
+                </div>
+              </li>
+
+              
+
+            </ul>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #MARKET
+      -->
+
+      <section class="section market" aria-label="market update" data-section>
+        <div class="container">
+
+          <div class="title-wrapper">
+            <h2 class="h2 section-title">Market Update</h2>
+
+            <a href="#" class="btn-link">See All Coins</a>
+          </div>
+
+          <div class="market-tab">
+
+            <ul class="tab-nav">
+
+              <li>
+                <button class="tab-btn active">View All</button>
+              </li>
+
+              <li>
+                <button class="tab-btn">Metaverse</button>
+              </li>
+
+              <li>
+                <button class="tab-btn">Entertainment</button>
+              </li>
+
+              <li>
+                <button class="tab-btn">Energy</button>
+              </li>
+
+              <li>
+                <button class="tab-btn">NFT</button>
+              </li>
+
+              <li>
+                <button class="tab-btn">Gaming</button>
+              </li>
+
+              <li>
+                <button class="tab-btn">Music</button>
+              </li>
+
+            </ul>
+
+            <table class="market-table">
+
+              <thead class="table-head">
+
+                <tr class="table-row table-title">
+
+                  <th class="table-heading"></th>
+
+                  <th class="table-heading" scope="col">#</th>
+
+                  <th class="table-heading" scope="col">Name</th>
+
+                  <th class="table-heading" scope="col">Last Price</th>
+
+                  <th class="table-heading" scope="col">24h %</th>
+
+                  <th class="table-heading" scope="col">Market Cap</th>
+
+                  <th class="table-heading" scope="col">Last 7 Days</th>
+
+                  <th class="table-heading"></th>
+
+                </tr>
+
+              </thead>
+
+              <tbody class="table-body">
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">1</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                     
+
+                      <h3>
+                        <a href="#" class="coin-name">Tesla</a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price">$56,623.54</td>
+
+                  <td class="table-data last-update green">+1.45%</td>
+
+                  <td class="table-data market-cap">$880,423,640,582</td>
+
+                  <td class="table-data">
+                    <img src="./assets/images/chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
+                  </td>
+
+                  <td class="table-data">
+                    <button class="btn btn-outline">Trade</button>
+                  </td>
+
+                </tr>
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">2</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                      
+
+                      <h3>
+                        <a href="#" class="coin-name">MasterCard.Inc </a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price">$56,623.54</td>
+
+                  <td class="table-data last-update red">-5.12%</td>
+
+                  <td class="table-data market-cap">$880,423,640,582</td>
+
+                  <td class="table-data">
+                    <img src="./assets/images/chart-2.svg" width="100" height="40" alt="loss chart" class="chart">
+                  </td>
+
+                  <td class="table-data">
+                    <button class="btn btn-outline">Trade</button>
+                  </td>
+
+                </tr>
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">3</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                      
+
+                      <h3>
+                        <a href="#" class="coin-name">Microsoft </a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price">$56,623.54</td>
+
+                  <td class="table-data last-update green">+1.45%</td>
+
+                  <td class="table-data market-cap">$880,423,640,582</td>
+
+                  <td class="table-data">
+                    <img src="./assets/images/chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
+                  </td>
+
+                  <td class="table-data">
+                    <button class="btn btn-outline">Trade</button>
+                  </td>
+
+                </tr>
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">4</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                     
+
+                      <h3>
+                        <a href="#" class="coin-name">SalesForce</a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price">$56,623.54</td>
+
+                  <td class="table-data last-update red">-3.75%%</td>
+
+                  <td class="table-data market-cap">$880,423,640,582</td>
+
+                  <td class="table-data">
+                    <img src="./assets/images/chart-2.svg" width="100" height="40" alt="loss chart" class="chart">
+                  </td>
+
+                  <td class="table-data">
+                    <button class="btn btn-outline">Trade</button>
+                  </td>
+
+                </tr>
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">5</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                      
+
+                      <h3>
+                        <a href="#" class="coin-name">Google </a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price">$56,623.54</td>
+
+                  <td class="table-data last-update green">+1.45%</td>
+
+                  <td class="table-data market-cap">$880,423,640,582</td>
+
+                  <td class="table-data">
+                    <img src="./assets/images/chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
+                  </td>
+
+                  <td class="table-data">
+                    <button class="btn btn-outline">Trade</button>
+                  </td>
+
+                </tr>
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">6</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                   
+
+                      <h3>
+                        <a href="#" class="coin-name">Apple</a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price">$56,623.54</td>
+
+                  <td class="table-data last-update red">-2.22%</td>
+
+                  <td class="table-data market-cap">$880,423,640,582</td>
+
+                  <td class="table-data">
+                    <img src="./assets/images/chart-2.svg" width="100" height="40" alt="loss chart" class="chart">
+                  </td>
+
+                  <td class="table-data">
+                    <button class="btn btn-outline">Trade</button>
+                  </td>
+
+                </tr>
+
+                
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #INSTRUCTION
+      -->
+
+      
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" aria-label="about" data-section>
+        <div class="container">
+
+          <figure class="about-banner">
+            <img src="./assets/images/about-banner.png" width="748" height="436" loading="lazy" alt="about banner"
+              class="w-100">
+          </figure>
+
+          <div class="about-content">
+
+            <h2 class="h2 section-title">What Is Stocker</h2>
+
+            <p class="section-text">
+              Predict and Analyse your stocks with ease.
+              Invest your capital safely with your own
+              trustworthy Stock Predictor.
+              
+            </p>
+
+            <ul class="section-list">
+
+              <li class="section-item">
+                <div class="title-wrapper">
+                  <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
+
+                  <h3 class="h3 list-title">View real-time stock predictions</h3>
+                </div>
+
+                <p class="item-text">
+                  Experience an amazing thrill to invest wisely and precisely!
+                </p>
+              </li>
+
+              <li class="section-item">
+                <div class="title-wrapper">
+                  <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
+
+                  <h3 class="h3 list-title">Buy and sell stocks on our predictions</h3>
+                </div>
+
+               
+              </li>
+
+            </ul>
+
+            <a href="#" class="btn btn-primary">Explore More</a>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #APP
+      -->
+
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top" data-section>
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="https://images.websiteplanet.com/wp-content/uploads/2020/07/9-Best-S-Logos-and-How-to-Make-Your-Own-for-Free-image8.png" width="50" height="50" alt="Cryptex logo">
+            Stocker
+          </a>
+
+         
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Products</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Spot</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Inverse Perpetual</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">USDT Perpetual</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Exchange</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Launchpad</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Binance Pay</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Services</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Buy </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Markets</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Tranding Fee</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Affiliate Program</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Referral Program</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">API</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Support</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Bybit Learn</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Help Center</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">User Feedback</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Submit a request</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">API Documentation</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Trading Rules</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">About Us</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">About Bybit</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Authenticity Check</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Careers</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Business Contacts</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Blog</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        
+
+        <ul class="social-list">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
