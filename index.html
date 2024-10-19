@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toxic Comment Classifier</title>
+</head>
+<body>
+    <h1>Toxic Comment Classifier</h1>
+    <form action="/predict" method="post">
+        <label for="comment">Enter Comment:</label><br>
+        <textarea id="comment" name="comment" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="Classify">
+    </form>
+    {% if result %}
+    <h2>Result: {{ result }}</h2>
+    <h3>Comment: {{ comment }}</h3>
+    {% endif %}
+</body>
+</html>
